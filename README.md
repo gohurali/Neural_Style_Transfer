@@ -1,2 +1,2 @@
-# Neural_Style_Transfer
+# Neural Style Transfer
 Using ConvNets for Style Transfer between Images
