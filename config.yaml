@@ -9,3 +9,16 @@ content_image_location : content_images/seattle.jpg
 style_image_location : style_images/starry_night.jpg
 
 image_size : 256
+
+#-------------------------------------------------------
+#                  Hyperparameters
+#-------------------------------------------------------
+style_weights : 
+ 'conv1_1': 1.
+ 'conv2_1': 0.75
+ 'conv3_1': 0.35
+ 'conv4_1': 0.25
+ 'conv5_1': 0.40
+
+content_weight : 1 # alpha
+style_weight : 1e6 # beta

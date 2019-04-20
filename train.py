@@ -26,17 +26,26 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 class Trainer:
     def __init__(self):
         self.cfg = yaml.safe_load(open('config.yaml'))
-        self.content_im_loc = self.cfg['content_image_location']
-        self.style_im_loc = self.cfg['style_image_location']
-        self.img_size = self.cfg['image_size']
         
+    def get_images(self, location):
+        content_im_loc = self.cfg['content_image_location']
+        style_im_loc = self.cfg['style_image_location']
+        content_im = Image.open(content_im_loc)
+        style_im = Image.open(style_im_loc)
+        return content_im, style_im
     
-    def preprocess_images(self, image, IMAGE_SIZE):
+    def initialize_output_image(self, content):
+        output = content.clone()
+        output.requires_grad = True
+        output = output.to(device
+
+
+    def preprocess_images(self, image):
         """Pre-processing images to the specifications
         of the VGG19 Pre-Trained Model.
         """
         gen_transformer = transforms.Compose([
-            transforms.Resize(IMAGE_SIZE),
+            transforms.Resize(self.cfg['image_size']),
             transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406],[0.229, 0.224, 0.225])
         ])
