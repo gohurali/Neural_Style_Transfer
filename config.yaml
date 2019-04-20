@@ -1,0 +1,11 @@
+########################################################
+#          Config File for Style Transfer              #              
+########################################################
+
+#-------------------------------------------------------
+#                     Data
+#-------------------------------------------------------
+content_image_location : content_images/seattle.jpg
+style_image_location : style_images/starry_night.jpg
+
+image_size : 256
